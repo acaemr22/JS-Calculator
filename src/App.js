@@ -175,142 +175,142 @@ export default function App() {
           */
           
           
-          console.log(parts, "splitted to the parts");
+          // console.log(parts, "splitted to the parts");
           
           
-          let index_d = parts.findIndex((e) => String(e).includes("x"))
-          let index_m = parts.findIndex((e) => String(e).includes("/"))
+          // let index_d = parts.findIndex((e) => String(e).includes("x"))
+          // let index_m = parts.findIndex((e) => String(e).includes("/"))
 
-          let multiple = (index, index2=true) => {
+          // let multiple = (index, index2=true) => {
             
-            return parts[index].length === 1 && index2!==true ? parts[index].length : true 
-          } 
+          //   return parts[index].length === 1 && index2!==true ? parts[index].length : true 
+          // } 
           
-          while (index_d > 0 || index_m > 0) {
+          // while (index_d > 0 || index_m > 0) {
             
-            index_m = parts.findIndex((e) => String(e).includes("x"))
+          //   index_m = parts.findIndex((e) => String(e).includes("x"))
            
-            index_d = parts.findIndex((e) => String(e).includes("/"))
+          //   index_d = parts.findIndex((e) => String(e).includes("/"))
             
-            console.log(parts);
+          //   console.log(parts);
             
-            if (index_m>0 && index_d>0) {
-              if (index_d < index_m) {
-                let first = Number(parts[index_d - 1])
-                let second = Number(parts[index_d + 1])
-                let condition = parts[index_d].replace(/[x/+\-]*([x/+\-])/, "$1")
-                let total = condition === "x" ? first*second 
-                : condition === "/" ? first/second
-                : condition === "+" ? first+second
-                : first-second
-                parts[index_d - 1] = total;
-                parts.splice(index_d,2)
-              }
+          //   if (index_m>0 && index_d>0) {
+          //     if (index_d < index_m) {
+          //       let first = Number(parts[index_d - 1])
+          //       let second = Number(parts[index_d + 1])
+          //       let condition = parts[index_d].replace(/[x/+\-]*([x/+\-])/, "$1")
+          //       let total = condition === "x" ? first*second 
+          //       : condition === "/" ? first/second
+          //       : condition === "+" ? first+second
+          //       : first-second
+          //       parts[index_d - 1] = total;
+          //       parts.splice(index_d,2)
+          //     }
 
-              else {
-                let first = Number(parts[index_m - 1])
-                let second = Number(parts[index_m + 1])
-                let condition = parts[index_m].replace(/[x/+\-]*([x/+\-])/, "$1")
-                let total = condition === "x" ? first*second 
-                : condition === "/" ? first/second
-                : condition === "+" ? first+second
-                : first-second
-                parts[index_m - 1] = total
-                parts.splice(index_m,2)
-              }
-              console.log("end of while1 ", "parts:", parts );
+          //     else {
+          //       let first = Number(parts[index_m - 1])
+          //       let second = Number(parts[index_m + 1])
+          //       let condition = parts[index_m].replace(/[x/+\-]*([x/+\-])/, "$1")
+          //       let total = condition === "x" ? first*second 
+          //       : condition === "/" ? first/second
+          //       : condition === "+" ? first+second
+          //       : first-second
+          //       parts[index_m - 1] = total
+          //       parts.splice(index_m,2)
+          //     }
+          //     console.log("end of while1 ", "parts:", parts );
 
-            }
+          //   }
 
-            else {
-              if (index_m>0)  {
-                let first = Number(parts[index_m - 1])
-                let second = Number(parts[index_m + 1])
-                let condition = parts[index_m].replace(/[x/+\-]*([x/+\-])/, "$1")
-                let total = condition === "x" ? first*second 
-                : condition === "/" ? first/second
-                : condition === "+" ? first+second
-                : first-second
-                console.log("jjj", parts[index_m].replace(/[x/+\-]*([x/+\-])/, "$1") === "x" ? "x" : "/" ? "/" : "+" ? "+" : first-second);
-                parts[index_m - 1] = total
-                parts.splice(index_m,2)
-              }
+          //   else {
+          //     if (index_m>0)  {
+          //       let first = Number(parts[index_m - 1])
+          //       let second = Number(parts[index_m + 1])
+          //       let condition = parts[index_m].replace(/[x/+\-]*([x/+\-])/, "$1")
+          //       let total = condition === "x" ? first*second 
+          //       : condition === "/" ? first/second
+          //       : condition === "+" ? first+second
+          //       : first-second
+          //       console.log("jjj", parts[index_m].replace(/[x/+\-]*([x/+\-])/, "$1") === "x" ? "x" : "/" ? "/" : "+" ? "+" : first-second);
+          //       parts[index_m - 1] = total
+          //       parts.splice(index_m,2)
+          //     }
 
-              else if(index_d>0) {
-                let first = Number(parts[index_d - 1])
-                let second = Number(parts[index_d + 1])
-                let condition = parts[index_d].replace(/[x/+\-]*([x/+\-])/, "$1")
-                let total = condition === "x" ? first*second 
-                : condition === "/" ? first/second
-                : condition === "+" ? first+second
-                : first-second
-                parts[index_d - 1] = total;
-                parts.splice(index_d,2)
-              }
-            }
-            console.log(parts, "multiplication process finished");
+          //     else if(index_d>0) {
+          //       let first = Number(parts[index_d - 1])
+          //       let second = Number(parts[index_d + 1])
+          //       let condition = parts[index_d].replace(/[x/+\-]*([x/+\-])/, "$1")
+          //       let total = condition === "x" ? first*second 
+          //       : condition === "/" ? first/second
+          //       : condition === "+" ? first+second
+          //       : first-second
+          //       parts[index_d - 1] = total;
+          //       parts.splice(index_d,2)
+          //     }
+          //   }
+          //   console.log(parts, "multiplication process finished");
 
-          }
-          console.log("parts:", parts );
+          // }
+          // console.log("parts:", parts );
 
 
-          index_m = parts.findIndex((e) => String(e).includes("+"))
+          // index_m = parts.findIndex((e) => String(e).includes("+"))
           
-          index_d = parts.findIndex((e) => String(e).includes("-"))
+          // index_d = parts.findIndex((e) => String(e).includes("-"))
 
-          while (index_d > 0 || index_m > 0) {
-            index_m = parts.findIndex((e) => String(e).includes("+"))
-              console.log(index_m);
+          // while (index_d > 0 || index_m > 0) {
+          //   index_m = parts.findIndex((e) => String(e).includes("+"))
+          //     console.log(index_m);
             
-            index_d = parts.findIndex((e) => String(e).includes("-"))
+          //   index_d = parts.findIndex((e) => String(e).includes("-"))
 
             
-            if (index_m>0 && index_d>0) {
-              if (index_d < index_m) {
-                let first = Number(parts[index_d - 1])  
-                let second = Number(parts[index_d + 1])
-                let total = parts[index_d].replace(/[x/+\-]*([x/+\-])/, "$1")  === "+" ? first+second : first-second
-                parts[index_d - 1] = total;
-                parts.splice(index_d, 2)
-              }
+          //   if (index_m>0 && index_d>0) {
+          //     if (index_d < index_m) {
+          //       let first = Number(parts[index_d - 1])  
+          //       let second = Number(parts[index_d + 1])
+          //       let total = parts[index_d].replace(/[x/+\-]*([x/+\-])/, "$1")  === "+" ? first+second : first-second
+          //       parts[index_d - 1] = total;
+          //       parts.splice(index_d, 2)
+          //     }
               
-              else {
-                let first = Number(parts[index_m - 1])
-                let second = Number(parts[index_m + 1])
-                let total = parts[index_m].replace(/[x/+\-]*([x/+\-])/, "$1")  === "+" ? first+second :  first-second
-                parts[index_m - 1] = total
-                parts.splice(index_m,2)
-              }
-            }
+          //     else {
+          //       let first = Number(parts[index_m - 1])
+          //       let second = Number(parts[index_m + 1])
+          //       let total = parts[index_m].replace(/[x/+\-]*([x/+\-])/, "$1")  === "+" ? first+second :  first-second
+          //       parts[index_m - 1] = total
+          //       parts.splice(index_m,2)
+          //     }
+          //   }
             
 
-            else {
-              if (index_m>0) {
-                let first = Number(parts[index_m - 1])
-                let second = Number(parts[index_m + 1])
-                let total = parts[index_m].replace(/[x/+\-]*([x/+\-])/, "$1")  === "+" ? first+second :  first-second
-                parts[index_m - 1] = total
-                parts.splice(index_m,2)
-              }
+          //   else {
+          //     if (index_m>0) {
+          //       let first = Number(parts[index_m - 1])
+          //       let second = Number(parts[index_m + 1])
+          //       let total = parts[index_m].replace(/[x/+\-]*([x/+\-])/, "$1")  === "+" ? first+second :  first-second
+          //       parts[index_m - 1] = total
+          //       parts.splice(index_m,2)
+          //     }
 
 
-              else if(index_d>0) {
-                let first = Number(parts[index_d - 1])
-                let second = Number(parts[index_d + 1])
-                let total = parts[index_d].replace(/[x/+\-]*([x/+\-])/, "$1")  === "+" ? first+second :  first-second
-                parts[index_d - 1] = total;
-                parts.splice(index_d, 2)
+          //     else if(index_d>0) {
+          //       let first = Number(parts[index_d - 1])
+          //       let second = Number(parts[index_d + 1])
+          //       let total = parts[index_d].replace(/[x/+\-]*([x/+\-])/, "$1")  === "+" ? first+second :  first-second
+          //       parts[index_d - 1] = total;
+          //       parts.splice(index_d, 2)
 
-              }
+          //     }
               
-            }
+          //   }
 
             
-          }
+          // }
 
-          calculation+= e.target.innerText  + String(parts[0])
+          calculation+= e.target.innerText  + String(eval(calculation))
           backDisplay.innerText= calculation 
-          displayText = String(parts[0])
+          displayText = String(eval(calculation))
           display.innerText = displayText;
         }
         
