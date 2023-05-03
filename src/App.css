@@ -1,0 +1,222 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  background-color: #2E4F4F;
+  flex-direction: column;
+}
+
+
+.main-wrapper {
+  width: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+/* Modes Style */
+
+.modes {
+  background-color: #2C3333;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.mode {
+  padding: 8px;
+  cursor: pointer;
+  background-color: #2C3333;
+  border: none;
+}
+
+.selected-mode {
+  background-color: #53c0c0;
+  border-radius: 10px;
+}
+
+/* Calculator */ 
+
+.calculator {
+  height: 525px;
+  position: relative;
+  border: solid 5px;
+}
+
+/* Screens */
+
+
+.wrapper-display {
+  font-family: digital;
+  background-color: black ;
+  text-align: right;
+}
+
+.back-display{
+  height: 35px;
+  color: orange;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+
+.display {
+  height: 60px;
+  color:white;
+  font-size: 1.8em;
+  font-weight: 400;
+}
+
+
+
+/* Footer */
+
+.footer {
+  color: #CBE4DE;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+a {
+  text-decoration: none;
+  color:#53c0c0;
+}
+
+:root {
+  --btn-bg: #2C3333;
+  --app-bg :#2E4F4F;
+  --ac-bg: #0E8388;
+  --color: #CBE4DE;
+  
+  
+}
+
+
+
+
+/* Buttons */
+
+.h-btn {
+  height: 100%;
+}
+
+
+.btn-calc {
+  margin: 0;
+  height: 85px;
+  width: 80px;
+  background-color: #2C3333;
+  color: #CBE4DE;
+  font-size: 1.5em;
+}
+
+#clear, #zero {
+  width: 160px;
+}
+
+#clear {
+  background-color: #0E8388;
+}
+
+#equals {
+  height: 170px;
+  position: absolute;
+  top: 350px;
+  background-color: #63af9d;
+  color: #2C3333;
+}
+
+
+.opened {
+  background-color: #6d8e87;
+  color: #2C3333;
+}
+
+.normal:hover {
+  border:  solid #CBE4DE;
+}
+
+
+.normal:hover:not(.opened, #clear, #equals){
+  color: #53c0c0;
+}
+
+.normal:hover.opened, .normal:hover#equals {
+  color: #CBE4DE;
+}
+
+.normal:hover#clear {
+  color: #2C3333 !important; 
+}
+
+.clicked:hover:not(.opened, #clear, #equals){
+  color: #53c0c0;
+}
+
+.clicked:hover.opened, .clicked:hover#equals {
+  color: #CBE4DE;
+}
+
+.clicked:hover#clear {
+  color: #2C3333; 
+}
+
+.clicked {
+  border: solid #880e0e !important
+}
+
+
+/* Open */
+
+.open-bg-yellow {
+  background-color: #FFEA20;
+}
+
+.open-btn-color {
+  color: #335750;
+}
+
+.open-btn-bg {
+  background-color:  #6effd1;
+}
+
+
+.open-opened-color {
+  color: #53c0c0
+}
+
+
+.open-opened-bg {
+  background-color: #0d4040;
+} 
+
+.clear-css {
+  color:  #0ee4e4 !important;
+  background-color: #0f5e54 !important;
+}
+
+.equals-css {
+  background-color: #1add99 !important;
+}
+
+
+
