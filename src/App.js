@@ -310,9 +310,11 @@ export default function App() {
           let pastCalc = calculation.replace(/x/g, "*").replace(/[*+\-/]{2,}([*+\-/])/g, "$1")
           let test = /[*+\-/]{3,}/g.test(pastCalc)
           if (!test) {
-            calculation+= e.target.innerText  + String(eval(pastCalc))
+            let total = eval(pastCalc)
+            total = total
+            calculation+= e.target.innerText  + String(total)
             backDisplay.innerText= calculation 
-            displayText = String(eval(pastCalc))
+            displayText = String(total)
             display.innerText = displayText;  
           } 
         }
