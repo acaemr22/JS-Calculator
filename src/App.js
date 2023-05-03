@@ -307,10 +307,10 @@ export default function App() {
 
             
           // }
-
-          calculation+= e.target.innerText  + String(eval(calculation))
+          let pastCalc = calculation.replace(/x/g, "*")
+          calculation+= e.target.innerText  + String(eval(pastCalc))
           backDisplay.innerText= calculation 
-          displayText = String(eval(calculation))
+          displayText = String(eval(pastCalc))
           display.innerText = displayText;
         }
         
