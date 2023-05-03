@@ -308,7 +308,7 @@ export default function App() {
             
           // }
           let pastCalc = calculation.replace(/x/g, "*").replace(/[*+\-/]{2,}([*+\-/])/g, "$1")
-          let test = calculation.test(/[*+\-/]{3,}/g)
+          let test = /[*+\-/]{3,}/g.test(pastCalc)
           if (!test) {
             calculation+= e.target.innerText  + String(eval(pastCalc))
             backDisplay.innerText= calculation 
