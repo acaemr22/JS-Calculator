@@ -307,11 +307,14 @@ export default function App() {
 
             
           // }
-          let pastCalc = calculation.replace(/x/g, "*")
-          calculation+= e.target.innerText  + String(eval(pastCalc))
-          backDisplay.innerText= calculation 
-          displayText = String(eval(pastCalc))
-          display.innerText = displayText;
+          let pastCalc = calculation.replace(/x/g, "*").replace(/[*+\-/]{2,}([*+\-/])/g, "$1")
+          let test = calculation.test(/[*+\-/]{3,}/g)
+          if (!test) {
+            calculation+= e.target.innerText  + String(eval(pastCalc))
+            backDisplay.innerText= calculation 
+            displayText = String(eval(pastCalc))
+            display.innerText = displayText;  
+          } 
         }
         
           // when clicked = show answer on display and full calculation on back display
